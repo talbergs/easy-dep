@@ -1,0 +1,6 @@
+#!/bin/bash
+
+echo "deploying..."
+docker build -t animaacija/easy-dep:0.0.13 .
+docker push animaacija/easy-dep:0.0.13
+

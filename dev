@@ -1,0 +1,13 @@
+#!/bin/bash
+
+function get_parallel {
+    echo "Parallel tooll will be installed. Press (y) when asked"
+    (wget -O - pi.dk/3 || curl pi.dk/3/ || fetch -o - http://pi.dk/3) | bash
+}
+which parallel || get_parallel
+
+job1='crystal run $PWD/src/app.cr -- $PWD/conf.json'
+job2='cd client && npm run start'
+
+parallel --ungroup -- ::: $job1 $job2
+

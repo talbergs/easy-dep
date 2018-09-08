@@ -1,0 +1,27 @@
+{
+    "name": "client",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "parcel serve src/pug/index.pug",
+        "build": "parcel build src/pug/index.pug"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "level4": "^1.0.1",
+        "node-sass": "^4.9.3",
+        "parcel-bundler": "^1.9.7",
+        "pug": "^2.0.3"
+    },
+    "dependencies": {
+        "@cerebral/react": "^3.2.2",
+        "ansi-to-html": "^0.6.6",
+        "cerebral": "^4.2.2",
+        "nbsp": "^1.0.2",
+        "react": "^16.4.2",
+        "react-dom": "^16.4.2"
+    }
+}

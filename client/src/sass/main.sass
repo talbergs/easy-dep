@@ -1,0 +1,22 @@
+@import colors
+@import normalize
+@import scroll
+@import panels
+
+#root, #root > div, body, html
+  height: 100%
+  color: $black
+
+#root > div
+  display: grid
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  grid-row-gap: 15px;
+  grid-template-columns: 110px 1fr 1fr 1fr
+  grid-template-rows: 40px 1fr 1fr 15%
+
+.stdout,.stderr
+  background: #333
+  color: floralwhite
+  padding: 10px
+

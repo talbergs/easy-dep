@@ -1,0 +1,13 @@
+conf.json
+.editorconfig
+.idea
+/docs/
+dist/
+/lib/
+/scripts/
+/bin/
+/.shards/
+*.dwarf
+.cache
+node_modules/
+
