@@ -1,4 +1,5 @@
 FROM animaacija/crystal-alpine:0.26.0 as crystal-builder
+
 WORKDIR /home
 COPY . .
 RUN shards install
