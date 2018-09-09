@@ -8,7 +8,7 @@ Allows to observe script output and invoke script by hand.
 Extend from this docker image and install things you may want to use in webhooks.
 Currently base image is alpine, so if you want your script to orchestrate docker:
 ```
-FROM animaacija/easy-dep:0.0.13
+FROM animaacija/easy-dep
 RUN apk update
 RUN apk add docker
 ```
@@ -31,7 +31,7 @@ example config.json:
   }
 }
 ```
-`d run -p 3000:3000 -v /var/run/docker.sock:/var/run/docker.sock -v $PWD/conf.json:/home/conf.json -v $PWD/scripts:/home/scripts animaacija/easy-dep:0.0.14`
+`d run -p 80:3000 -v /var/run/docker.sock:/var/run/docker.sock -v $PWD/conf.json:/home/conf.json -v $PWD/scripts:/home/scripts animaacija/easy-dep`
 
 ## Development
 `. ./dev`
