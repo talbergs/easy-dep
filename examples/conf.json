@@ -1,15 +1,15 @@
 {
   "hooks": [
     {
-      "name": "docker",
-      "path": "/docker-script",
+      "name": "feature deploy",
+      "path": "/some-web-hook",
       "script": {
-        "bin": "docker",
+        "bin": "bash",
         "args": [
-          "ps"
+          "./path/to.sh"
         ]
       }
     }
+  ]
   }
-}
 

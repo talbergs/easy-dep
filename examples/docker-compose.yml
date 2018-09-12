@@ -1,14 +1,33 @@
 version: "3"
 
 services:
+  proxy:
+    image: traefik
+    command: --docker
+    ports:
+      - "80:80"
+      - "8080:8080"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+
+  plain:
+    build:
+      context: $PWD/examples/
+      dockerfile: plain.dockerfile
+    volumes:
+      - $PWD/examples/conf.json:/home/conf.json
+      - $PWD/examples/scripts:/home/scripts
+    labels:
+      - "traefik.frontend.rule=Host:plain.easy-dep.localhost"
+
   docker:
     build:
-      context: ./examples
-      dockerfile: ./docker.dockerfile
+      context: $PWD/examples/
+      dockerfile: docker.dockerfile
     volumes:
-      - $PWD/scripts:/home/conf.json
-      - $PWD/conf.json:/home/conf.json
+      - $PWD/examples/conf.json:/home/conf.json
+      - $PWD/examples/scripts:/home/scripts
       - /var/run/docker.sock:/var/run/docker.sock
-    ports:
-      - 7770:3000
+    labels:
+      - "traefik.frontend.rule=Host:dockereasy-dep.localhost"
 

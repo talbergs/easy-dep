@@ -24,11 +24,11 @@ example config.json:
       "script": {
         "bin": "bash",
         "args": [
-          "./path/to.sh",
+          "./path/to.sh"
         ]
       }
     }
-  }
+  ]
 }
 ```
 `d run -p 80:3000 -v /var/run/docker.sock:/var/run/docker.sock -v $PWD/conf.json:/home/conf.json -v $PWD/scripts:/home/scripts animaacija/easy-dep`
@@ -36,7 +36,8 @@ example config.json:
 ## Examples
 Each example may be previewed as service.
 
-`docker-compose -f ./examples/docker-compose.yml up docker`
+`docker-compose -f ./examples/docker-compose.yml up proxy docker plain`
+then visit: docker.easy-dep.localhost or plain.easy-dep.localhost
 
 ## Development
 `. ./dev`
@@ -55,4 +56,13 @@ Each example may be previewed as service.
 
 TODO: Transbuild ubuntu/alpine and more
 TODO: Execute arbitrary code (repl)
+
+
+## techs used:
+ - css-grid
+ - cerebraljs,react,parcel,sass
+ - crystal-lang (kemal)
+ - traefik
+ - docker-compose
+
 
