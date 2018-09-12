@@ -1,0 +1,15 @@
+{
+  "hooks": [
+    {
+      "name": "docker",
+      "path": "/docker-script",
+      "script": {
+        "bin": "docker",
+        "args": [
+          "ps"
+        ]
+      }
+    }
+  }
+}
+
