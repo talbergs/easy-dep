@@ -18,7 +18,7 @@ services:
       - $PWD/examples/conf.json:/home/conf.json
       - $PWD/examples/scripts:/home/scripts
     labels:
-      - "traefik.frontend.rule=Host:plain.easy-dep.localhost"
+      - "traefik.frontend.rule=Host:plain.easy-dep.${HOST:-localhost}"
 
   docker:
     build:
@@ -29,5 +29,5 @@ services:
       - $PWD/examples/scripts:/home/scripts
       - /var/run/docker.sock:/var/run/docker.sock
     labels:
-      - "traefik.frontend.rule=Host:dockereasy-dep.localhost"
+      - "traefik.frontend.rule=Host:dockereasy-dep.${HOST:-localhost}"
 
