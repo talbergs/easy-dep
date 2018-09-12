@@ -33,6 +33,11 @@ example config.json:
 ```
 `d run -p 80:3000 -v /var/run/docker.sock:/var/run/docker.sock -v $PWD/conf.json:/home/conf.json -v $PWD/scripts:/home/scripts animaacija/easy-dep`
 
+## Examples
+Each example may be previewed as service.
+
+`docker-compose -f ./examples/docker-compose.yml up docker`
+
 ## Development
 `. ./dev`
 
