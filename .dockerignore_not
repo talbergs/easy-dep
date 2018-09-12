@@ -1,7 +1,0 @@
-*
-!.dockerignore
-!/client/src
-!/client/*.json
-!/src/*
-!/shard.*
-

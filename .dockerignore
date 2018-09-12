@@ -1,0 +1,7 @@
+/spec/
+/bin/
+.DS_Store
+/client/node_modules/
+/scripts/
+conf.json
+

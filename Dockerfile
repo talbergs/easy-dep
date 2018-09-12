@@ -16,6 +16,6 @@ COPY --from=crystal-builder /home/app ./
 COPY --from=js-builder /home/dist ./client/dist
 
 EXPOSE 3000
-VOLUME ["./scripts", "./conf.json"]
+VOLUME ["/home/scripts", "/home/conf.json"]
 CMD ["./app", "./conf.json", "./scripts", "./client"]
 
