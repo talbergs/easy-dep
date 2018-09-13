@@ -1,6 +1,7 @@
 require "http"
 require "./conf"
 require "json"
+require "colorize"
 
 class Proccer
     getter output = Channel(String).new
@@ -9,7 +10,13 @@ class Proccer
     getter sigterm = Channel(Nil).new
     getter pid = 0
 
-    def initialize(@pwd : String?)
+    def initialize(pwd : String?)
+        if !pwd
+            puts "scripts directory not given".colorize.yellow
+        elsif !File.directory?(pwd)
+            puts "scripts directory '#{pwd}' does not exist".colorize.red
+        end
+        @pwd = pwd
     end
 
     def invoke(script : ScriptConf)
